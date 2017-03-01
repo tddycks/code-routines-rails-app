@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301030553) do
+ActiveRecord::Schema.define(version: 20170301183902) do
 
   create_table "focus_workouts", id: false, force: :cascade do |t|
     t.integer  "focus_id"
@@ -24,12 +24,6 @@ ActiveRecord::Schema.define(version: 20170301030553) do
     t.string   "name"
     t.time     "start_time"
     t.time     "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "notes", force: :cascade do |t|
-    t.integer  "focus_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
