@@ -24,16 +24,15 @@ email:string
 
 workouts
 name:string
-*** description:text
-*** duration:string
-
+description:text
+duration:string 
 user_id:integer
 public:boolean
 
 focuses
 name:string
-***description:string
-*** duration:integer
+description:string 
+duration:integer
 
 
 focus_workouts

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301183902) do
+ActiveRecord::Schema.define(version: 20170301185831) do
 
   create_table "focus_workouts", id: false, force: :cascade do |t|
     t.integer  "focus_id"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 20170301183902) do
 
   create_table "focuses", force: :cascade do |t|
     t.string   "name"
-    t.time     "start_time"
-    t.time     "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
+    t.integer  "duration"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,8 +54,10 @@ ActiveRecord::Schema.define(version: 20170301183902) do
     t.string   "name"
     t.integer  "user_id"
     t.boolean  "public"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
+    t.string   "duration"
   end
 
 end
