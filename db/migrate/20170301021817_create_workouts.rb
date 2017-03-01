@@ -1,6 +1,6 @@
-class CreateRoutines < ActiveRecord::Migration
+class CreateWorkouts < ActiveRecord::Migration
   def change
-    create_table :routines do |t|
+    create_table :workouts do |t|
       t.string :name
       t.integer :user_id
       t.boolean :public

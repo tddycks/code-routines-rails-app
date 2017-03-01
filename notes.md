@@ -1,19 +1,19 @@
 users
-has_many :routines
+has_many :workouts
 
-routines
+workouts
 belongs_to :user
-has_many :routine_focuses
-has_many :focuses, through: routine_focuses
+has_many :focus_workouts
+has_many :focuses, through: focus_workouts
 
 focuses
-has_many :routine_focuses
-has_many :routines, through: routine_focuses
+has_many :focus_workouts
+has_many :workouts, through: focus_workouts
 has_many :notes
 
-routine_focuses
+focus_workouts
 belongs_to :focus
-belongs_to :routine
+belongs_to :workout
 
 notes
 belongs_to :focus
@@ -25,7 +25,7 @@ name:string
 username:string
 email:string
 
-routines
+workouts
 name:string
 user_id:integer
 public:boolean
@@ -35,8 +35,8 @@ name:string
 start_time:time
 end_time:time
 
-routine_foucuses
-routine_id:integer
+focus_workouts
+workout_id:integer
 focus_id:integer
 
 
