@@ -28,12 +28,17 @@ email:string
 routines
 name:string
 user_id:integer
+public:boolean
 
 focuses
 name:string
 start_time:time
 end_time:time
+
+routine_foucuses
 routine_id:integer
+focus_id:integer
+
 
 notes
 focus_id:integer
