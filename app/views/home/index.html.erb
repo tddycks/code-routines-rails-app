@@ -1,3 +1,10 @@
-<% @workouts.each do |workout| %>
-  <%= workout.name %>
-<% end %>
+<ul>
+  <% @workouts.each do |workout| %>
+    <li><%= workout.name %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to "Create a new workout!", new_user_workout_path(current_user) %>
+
+<h1> hello </h1>
