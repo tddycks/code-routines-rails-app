@@ -7,7 +7,9 @@ class WorkoutsController < ApplicationController
   def new
     @user = current_user
     @workout = Workout.new
-    @workout.focuses.build
+    #2.times do 
+      @workout.focuses.build
+    #end
   end
 
   def create

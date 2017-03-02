@@ -11,5 +11,15 @@
   <%= f.label :public %>
   <%= f.check_box :public %><br>
 
+  <%= f.collection_check_boxes :focus_ids, Focus.all, :id, :name %><br>
+  
+  <%= f.fields_for :focuses do |focus| %>
+    <%= focus.label :name %>
+    <%= focus.text_field :name %><br>
+    <%= focus.label :description %>
+    <%= focus.text_field :description %><br>
+    <%= focus.label :duration %>
+    <%= focus.number_field :duration %><br>
+  <% end %>
 <%= f.submit %>
 <% end %>
