@@ -1,13 +1,17 @@
+require 'pry'
 class WorkoutsController < ApplicationController
 
   def index
   end
 
   def new
-     render text: 'hello new user workout'
+    @user = current_user
+    @workout = Workout.new
+    @workout.focuses.build
   end
 
   def create
+    raise params.inspect
   end
 
 end

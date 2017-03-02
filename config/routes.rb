@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
   resources :users do
-    resources :workouts, only: [:index, :edit, :show, :new]
+    resources :workouts
   end
 
 

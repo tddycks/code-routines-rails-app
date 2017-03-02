@@ -1,0 +1,15 @@
+<%= form_for([@user, @workout]) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %><br>
+
+  <%= f.label :duration %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :public %>
+  <%= f.check_box :public %><br>
+
+<%= f.submit %>
+<% end %>
