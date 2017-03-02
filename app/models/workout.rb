@@ -7,8 +7,8 @@ class Workout < ActiveRecord::Base
   def focuses_attributes=(focuses_hashes)
     focuses_hashes.each do |index, focus_attributes|
       if focus_attributes[:name].present?
-        focus = Focus.find_or_create_by(name: focus_attributes[:name])
-        if !self.focuses.include(focus)
+        focus = Focus.find_or_create_by(focus_attributes)
+        if !self.focuses.include?(focus)
           self.focus_workouts.build(focus: focus)
         end
       end
