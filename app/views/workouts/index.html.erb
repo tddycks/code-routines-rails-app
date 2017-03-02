@@ -1,1 +1,5 @@
-hello
+<ul>
+  <% @workouts.each do |workout| %>
+    <li><%= link_to workout.name, user_workout_path(workout.user, workout) %></li>
+  <% end %>
+</ul>
