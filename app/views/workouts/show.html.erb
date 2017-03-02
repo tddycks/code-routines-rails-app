@@ -1,0 +1,9 @@
+<h1><%= @workout.name %></h1>
+<p><%= @workout.description %></p>
+<p>Duration: <%= @workout.duration %></p>
+----------------------
+<% @workout.focuses.each do |focus| %>
+  <p><%= focus.name %></p>
+  <p><%= focus.description %></p>
+  <p>This will take about <%= focus.duration %> minutes.</p>
+<% end %>

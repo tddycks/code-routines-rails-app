@@ -21,8 +21,7 @@ class WorkoutsController < ApplicationController
   end
 
   def show
-    raise params.inspect
-    render text: 'you made it to the show page'
+    @workout = Workout.find_by(id: params[:id])
   end
 
 
