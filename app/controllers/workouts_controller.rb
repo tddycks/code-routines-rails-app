@@ -3,6 +3,7 @@ class WorkoutsController < ApplicationController
 
   def index
     @workouts = current_user.workouts
+    @user = User.find_by(id: params[:user_id])
   end
 
   def new

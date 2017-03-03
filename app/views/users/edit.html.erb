@@ -8,5 +8,7 @@ Change your details:
   <%= f.text_field :username %><br>
   <%= f.label :bio %>
   <%= f.text_area :bio %><br>
-  <%= f.submit %>
+  <%= f.submit "Update" %>
 <% end %>
+
+Or update your email/password <%= link_to "here", edit_user_registration_path %>.
