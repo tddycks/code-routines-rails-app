@@ -1,0 +1,10 @@
+Edit the Focus:
+<%= form_for @focus do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+  <%= f.label "Number of Minutes" %>
+  <%= f.number_field :duration %><br>
+  <%= f.submit %>
+<% end %>

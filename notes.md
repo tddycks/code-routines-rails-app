@@ -43,7 +43,6 @@ focus_id:integer
 
 
 What to focus on next?
-add edit link to each focus on workout show page
 add bio to user table
 create users controller
 create a user show page
