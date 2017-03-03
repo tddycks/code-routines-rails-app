@@ -1,0 +1,12 @@
+Change your details:
+<%= form_for @user do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %><br>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %><br>
+  <%= f.label :username %>
+  <%= f.text_field :username %><br>
+  <%= f.label :bio %>
+  <%= f.text_area :bio %><br>
+  <%= f.submit %>
+<% end %>

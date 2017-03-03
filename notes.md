@@ -43,7 +43,6 @@ focus_id:integer
 
 
 What to focus on next?
-add bio to user table
 create users controller
 create a user show page
 
