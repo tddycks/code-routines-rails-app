@@ -8,11 +8,9 @@ class WorkoutsController < ApplicationController
   def new
     @user = current_user
     @workout = Workout.new 
-    @workout.focuses.build
   end
 
   def create
-    #raise params.inspect
     @workout = current_user.workouts.build(workout_params)
     if @workout.save
       redirect_to user_workout_path(current_user, @workout)
@@ -23,6 +21,20 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find_by(id: params[:id])
+  end
+
+  def edit
+    @user = current_user
+    @workout = Workout.find_by(id: params[:id])
+  end
+
+  def update
+    @workout = Workout.find_by(id: params[:id])
+    if @workout.update(workout_params)
+      redirect_to user_workout_path(current_user, @workout)
+    else
+      render :edit
+    end
   end
 
 

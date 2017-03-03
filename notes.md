@@ -39,3 +39,15 @@ focus_workouts
 workout_id:integer
 focus_id:integer
 
+
+
+
+What to focus on next?
+add edit button to workout show page
+add 'add a focus' link to workout show page - this goes to edit workout page
+create focuses controller 
+add edit link to each focus on workout show page
+add bio to user table
+create users controller
+create a user show page
+

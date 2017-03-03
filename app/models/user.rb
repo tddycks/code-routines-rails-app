@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   enum role: [:user, :admin]
   has_many :workouts
+  has_many :focuses, through: :workouts
 
   after_initialize :set_user_role
 

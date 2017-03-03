@@ -1,3 +1,5 @@
+require 'pry'
+
 class Workout < ActiveRecord::Base
   belongs_to :user
   has_many :focus_workouts
@@ -15,3 +17,4 @@ class Workout < ActiveRecord::Base
     end
   end
 end
+
