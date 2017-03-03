@@ -1,5 +1,5 @@
 Edit the Focus:
-<%= form_for @focus do |f| %>
+<%= form_for ([@workout, @focus]) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.label :description %>

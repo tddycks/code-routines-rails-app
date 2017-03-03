@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :users do
     resources :workouts
   end
-  resources :focuses, only: [:edit, :update]
+
+  resources :workouts, only: [:show] do 
+    resources :focuses, only: [:edit, :update]
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
