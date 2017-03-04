@@ -1,9 +1,5 @@
 Hello <%= @user.first_name %><br />
-<% if @user.bio.present? %>
-  <%= @user.bio %><br />
-<% elsif  @user == current_user %>
-  <%= link_to "Add Bio", edit_user_path(@user) %><br />
-<% end %>
+<%= display_or_add_bio(@user) %><br />
 Username: <%= @user.username %><br />
 <%= link_to "Edit Profile", edit_user_path(@user) %>
 

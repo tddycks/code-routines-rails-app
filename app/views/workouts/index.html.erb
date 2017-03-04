@@ -1,10 +1,5 @@
 <h1><%= @user.first_name %> <%= @user.last_name %> (@<%= @user.username %>)</h1>
-<% if @user.bio.present? %>
-  <%= @user.bio %><br />
-<% elsif  @user == current_user %>
-  <%= link_to "Add Bio", edit_user_path(@user) %><br />
-<% end %>
-
+<%= display_or_add_bio(@user) %>
 <h3>Workouts</h3>
 <ul>
   <% @workouts.each do |workout| %>
