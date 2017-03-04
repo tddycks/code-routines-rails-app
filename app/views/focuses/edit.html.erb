@@ -1,4 +1,16 @@
 Edit the Focus:
+
+<% if @focus.errors.any? %>
+ <div id="error_explanation">
+   <h2>Errors:</h2>
+   <ul>
+   <% @focus.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+   <% end %>
+   </ul>
+ </div>
+<% end %>
+
 <%= form_for ([@workout, @focus]) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br />

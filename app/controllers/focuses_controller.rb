@@ -10,6 +10,7 @@ class FocusesController < ApplicationController
     if @focus.update(focus_params)
       redirect_to user_workout_path(current_user, params[:workout_id])
     else
+      @workout = Workout.find_by(id: params[:workout_id])
       render :edit
     end
   end
