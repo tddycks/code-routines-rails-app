@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   after_initialize :set_user_role
 
+  validates_uniqueness_of :username
+
   def set_user_role
     self.role ||= :user
   end

@@ -5,7 +5,7 @@ class Workout < ActiveRecord::Base
   has_many :focus_workouts
   has_many :focuses, through: :focus_workouts
 
-  validates :name, presence: true
+  validates_presence_of :description
 
   def focuses_attributes=(focuses_hashes)
     focuses_hashes.each do |index, focus_attributes|

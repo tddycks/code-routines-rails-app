@@ -1,3 +1,14 @@
+<% if @workout.errors.any? %>
+ <div id="error_explanation">
+   <h2>Errors:</h2>
+   <ul>
+   <% @workout.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+   <% end %>
+   </ul>
+ </div>
+<% end %>
+
 <%= form_for([@user, @workout]) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br />
@@ -11,7 +22,7 @@
   <%= f.label "Check if you'd like to keep this workout private" %>
   <%= f.check_box :private %><br />
   <h3>Add a focus</h3>
-  <%= f.collection_select :focus_ids, @user.focuses, :id, :name %><br />
+  <%= f.collection_select :focus_ids, @user.workouts, :id, :name %><br />
   <%= f.fields_for :focuses, @workout.focuses.build do |focus| %>
     <%= focus.label :name %>
     <%= focus.text_field :name %><br />

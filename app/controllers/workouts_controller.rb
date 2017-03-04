@@ -7,7 +7,7 @@ class WorkoutsController < ApplicationController
   end
 
   def new
-    @user = current_user
+    @user = User.find_by(id: params[:user_id])
     @workout = Workout.new 
   end
 
@@ -16,6 +16,7 @@ class WorkoutsController < ApplicationController
     if @workout.save
       redirect_to user_workout_path(current_user, @workout)
     else
+      @user = User.find_by(id: params[:user_id])
       render :new
     end
   end
@@ -25,7 +26,7 @@ class WorkoutsController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @user = User.find_by(id: params[:user_id])
     @workout = Workout.find_by(id: params[:id])
   end
 
