@@ -1,24 +1,24 @@
 <%= form_for([@user, @workout]) do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %><br>
+  <%= f.text_field :name %><br />
 
   <%= f.label :description %>
-  <%= f.text_area :description %><br>
+  <%= f.text_area :description %><br />
 
   <%= f.label :duration %>
-  <%= f.text_field :duration %><br>
+  <%= f.text_field :duration %><br />
 
   <%= f.label "Check if you'd like to keep this workout private" %>
-  <%= f.check_box :private %><br>
+  <%= f.check_box :private %><br />
   <h3>Add a focus</h3>
-  <%= f.collection_select :focus_ids, @user.focuses, :id, :name %><br>
+  <%= f.collection_select :focus_ids, @user.focuses, :id, :name %><br />
   <%= f.fields_for :focuses, @workout.focuses.build do |focus| %>
     <%= focus.label :name %>
-    <%= focus.text_field :name %><br>
+    <%= focus.text_field :name %><br />
     <%= focus.label :description %>
-    <%= focus.text_field :description %><br>
+    <%= focus.text_field :description %><br />
     <%= focus.label "Number of Minutes" %>
-    <%= focus.number_field :duration %><br>
+    <%= focus.number_field :duration %><br />
   <% end %>
 <%= f.submit %>
 <% end %>

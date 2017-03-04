@@ -7,7 +7,7 @@
   <p><%= focus.name %></p>
   <p><%= focus.description %></p>
   <p>This will take about <%= focus.duration %> minutes.</p>
-  <%= link_to "Edit", edit_workout_focus_path(@workout, focus) %><br>
-  ---------------------<br>
+  <%= link_to "Edit", edit_workout_focus_path(@workout, focus) %><br />
+  -------------------- <br />
 <% end %>
 <%= link_to "Add a focus to this workout", edit_user_workout_path(@workout.user, @workout) %>
