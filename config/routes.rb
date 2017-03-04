@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :workouts, only: [:show] do 
-    resources :focuses, only: [:edit, :update]
+    resources :focuses, only: [:edit, :update, :destroy]
   end
 
 

@@ -14,6 +14,11 @@ class FocusesController < ApplicationController
     end
   end
 
+  def destroy
+    Focus.find_by(id: params[:id]).destroy
+    redirect_to user_workout_path(current_user, params[:workout_id])
+  end
+
 
   private 
 

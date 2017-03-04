@@ -1,13 +1,14 @@
 <h1><%= @workout.name %></h1>
 <p><%= @workout.description %></p>
 <p>Duration: <%= @workout.duration %></p>
-<%= link_to "Edit", edit_user_workout_path(@workout.user, @workout) %>  <%= link_to "Delete Workout", user_workout_path(@workout.user, @workout), method: 'delete' %>
-----------------------
+<%= link_to "Edit", edit_user_workout_path(@workout.user, @workout) %>  <%= link_to "Delete Workout", user_workout_path(@workout.user, @workout), method: 'delete' %><br />
+
+<h3>Segments of this workout</h3>
 <% @workout.focuses.each do |focus| %>
   <p><%= focus.name %></p>
   <p><%= focus.description %></p>
   <p>This will take about <%= focus.duration %> minutes.</p>
-  <%= link_to "Edit", edit_workout_focus_path(@workout, focus) %><br />
+  <%= link_to "Edit", edit_workout_focus_path(@workout, focus) %> <%= link_to "Delete Focus", workout_focus_path(@workout, focus), method: 'delete' %><br />
   -------------------- <br />
 <% end %>
 <%= link_to "Add a focus to this workout", edit_user_workout_path(@workout.user, @workout) %>
