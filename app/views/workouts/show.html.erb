@@ -1,7 +1,7 @@
 <h1><%= @workout.name %></h1>
 <p><%= @workout.description %></p>
 <p>Duration: <%= @workout.duration %></p>
-<%= link_to "Edit", edit_user_workout_path(@workout.user, @workout) %><br>
+<%= link_to "Edit", edit_user_workout_path(@workout.user, @workout) %>  <%= link_to "Delete Workout", user_workout_path(@workout.user, @workout), method: 'delete' %>
 ----------------------
 <% @workout.focuses.each do |focus| %>
   <p><%= focus.name %></p>

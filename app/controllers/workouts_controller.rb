@@ -38,6 +38,13 @@ class WorkoutsController < ApplicationController
     end
   end
 
+  def destroy
+    #raise params.inspect
+    workout = Workout.find_by(id: params[:id])
+    workout.destroy
+    redirect_to user_workouts_path(current_user)
+  end
+
 
   private
 

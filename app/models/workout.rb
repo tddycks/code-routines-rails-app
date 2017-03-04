@@ -4,7 +4,6 @@ class Workout < ActiveRecord::Base
   belongs_to :user
   has_many :focus_workouts
   has_many :focuses, through: :focus_workouts
-  accepts_nested_attributes_for :focuses
 
   def focuses_attributes=(focuses_hashes)
     focuses_hashes.each do |index, focus_attributes|
