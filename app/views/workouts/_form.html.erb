@@ -23,6 +23,7 @@
   <%= f.check_box :private %><br />
   <h3>Add a focus</h3>
   <%= f.collection_select :focus_ids, @user.workouts, :id, :name %><br />
+
   <%= f.fields_for :focuses, @workout.focuses.build do |focus| %>
     <%= focus.label :name %>
     <%= focus.text_field :name %><br />

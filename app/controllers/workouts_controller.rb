@@ -35,6 +35,7 @@ class WorkoutsController < ApplicationController
     if @workout.update(workout_params)
       redirect_to user_workout_path(current_user, @workout)
     else
+      @user = User.find_by(id: params[:user_id])
       render :edit
     end
   end
