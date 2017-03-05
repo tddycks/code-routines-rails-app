@@ -1,22 +1,20 @@
 require 'pry'
 class WorkoutsController < ApplicationController
+  before_action :set_user, only: [:index, :new, :create, :edit, :update]
 
   def index
     @workouts = current_user.workouts
-    @user = User.find_by(id: params[:user_id])
   end
 
   def new
-    @user = User.find_by(id: params[:user_id])
     @workout = Workout.new 
   end
 
   def create
-    @workout = current_user.workouts.build(workout_params)
+    @workout = @user.workouts.build(workout_params)
     if @workout.save
-      redirect_to user_workout_path(current_user, @workout)
+      redirect_to user_workout_path(@user, @workout)
     else
-      @user = User.find_by(id: params[:user_id])
       render :new
     end
   end
@@ -26,16 +24,14 @@ class WorkoutsController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(id: params[:user_id])
     @workout = Workout.find_by(id: params[:id])
   end
 
   def update
     @workout = Workout.find_by(id: params[:id])
     if @workout.update(workout_params)
-      redirect_to user_workout_path(current_user, @workout)
+      redirect_to user_workout_path(@user, @workout)
     else
-      @user = User.find_by(id: params[:user_id])
       render :edit
     end
   end
@@ -49,6 +45,10 @@ class WorkoutsController < ApplicationController
 
 
   private
+
+    def set_user
+      @user = User.find_by(id: params[:user_id])
+    end
 
     def workout_params
       params.require(:workout).permit(:name, :description, :public, :duration, focus_ids:[], focuses_attributes: [:name, :description, :duration])
