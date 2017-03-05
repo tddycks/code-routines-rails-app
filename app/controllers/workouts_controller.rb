@@ -2,13 +2,13 @@ require 'pry'
 class WorkoutsController < ApplicationController
   before_action :set_user, only: [:index, :new, :create, :edit, :update]
   before_action :set_workout, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @workouts = @user.workouts
   end
 
   def new
-    authorize @workout
     @workout = Workout.new 
   end
 
@@ -26,11 +26,9 @@ class WorkoutsController < ApplicationController
   end
 
   def edit
-    authorize @workout
   end
 
   def update
-    authorize @workout
     if @workout.update(workout_params)
       redirect_to user_workout_path(@user, @workout)
     else
@@ -39,7 +37,6 @@ class WorkoutsController < ApplicationController
   end
 
   def destroy
-    authorize @workout
     @workout.destroy
     redirect_to user_workouts_path(current_user)
   end
@@ -53,6 +50,10 @@ class WorkoutsController < ApplicationController
 
     def set_workout
       @workout = Workout.find_by(id: params[:id])
+    end
+
+    def authorize_user
+      authorize @workout
     end
 
     def workout_params
