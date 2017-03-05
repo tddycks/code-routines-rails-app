@@ -4,7 +4,7 @@ class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:show, :edit, :update, :destroy]
 
   def index
-    @workouts = current_user.workouts
+    @workouts = @user.workouts
   end
 
   def new
@@ -27,6 +27,7 @@ class WorkoutsController < ApplicationController
   end
 
   def update
+    authorize @workout
     if @workout.update(workout_params)
       redirect_to user_workout_path(@user, @workout)
     else
