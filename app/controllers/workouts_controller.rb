@@ -8,10 +8,12 @@ class WorkoutsController < ApplicationController
   end
 
   def new
+    authorize @workout
     @workout = Workout.new 
   end
 
   def create
+    authorize @workout
     @workout = @user.workouts.build(workout_params)
     if @workout.save
       redirect_to user_workout_path(@user, @workout)
@@ -24,6 +26,7 @@ class WorkoutsController < ApplicationController
   end
 
   def edit
+    authorize @workout
   end
 
   def update
@@ -36,6 +39,7 @@ class WorkoutsController < ApplicationController
   end
 
   def destroy
+    authorize @workout
     @workout.destroy
     redirect_to user_workouts_path(current_user)
   end
