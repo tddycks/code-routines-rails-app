@@ -3,6 +3,9 @@
 <h3>Workouts</h3>
 <ul>
   <% @workouts.each do |workout| %>
-    <li><%= link_to workout.name, user_workout_path(workout.user, workout) %></li>
+    <li><%= link_to workout.name, user_workout_path(workout.user, workout) %>
+    <% if workout.private %>
+      (private)
+    <% end %></li>
   <% end %>
 </ul>

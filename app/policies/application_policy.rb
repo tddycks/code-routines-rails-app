@@ -15,11 +15,11 @@ class ApplicationPolicy
   end
 
   def create?
-    user.admin? || record.try(:user) == user
+    #user.admin? || params(:user_id) == user.id
   end
 
   def new?
-    create?
+    #create?
   end
 
   def update?

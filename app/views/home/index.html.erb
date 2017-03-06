@@ -1,7 +1,9 @@
 <ul>
   <% @workouts.each do |workout| %>
-    <li><%= link_to workout.name, user_workout_path(workout.user, workout) %> by <%= link_to workout.user.username, user_workouts_path(workout.user) %></li>
-    <%= workout.description %>
+    <% if !workout.private %>
+      <li><%= link_to workout.name, user_workout_path(workout.user, workout) %> by <%= link_to workout.user.username, user_workouts_path(workout.user) %></li>
+      <%= workout.description %>
+    <% end %>
   <% end %>
 </ul>
 
