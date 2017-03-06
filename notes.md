@@ -1,7 +1,7 @@
 What to focus on next?
 
-authorizations
 Omniauth Facebook
+create admin controller and views
 class methods (for admin reports?)
 Refactor code 
 Add slug methods to routes?
