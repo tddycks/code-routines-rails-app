@@ -1,3 +1,5 @@
+require 'pry'
+
 class ApplicationPolicy
   attr_reader :user, :record
 
@@ -15,7 +17,6 @@ class ApplicationPolicy
   end
 
   def create?
-    user.admin? || record.try(:user_id) == user.id
   end
 
   def new?
