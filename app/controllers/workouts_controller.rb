@@ -9,9 +9,11 @@ class WorkoutsController < ApplicationController
   end
 
   def new
-    @workout = Workout.new 
-    #raise @workout.inspect
-    #authorize @workout
+    if current_user.id == params[:user_id].to_i
+      @workout = Workout.new 
+    else 
+      redirect_to new_user_workout_path(current_user)
+    end
   end
 
   def create
