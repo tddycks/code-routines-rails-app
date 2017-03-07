@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
     self.role ||= :user
   end
 
+  def self.most_active
+    user = self.all.max_by { |u| u.workouts.count }
+  end
+
 end

@@ -1,6 +1,11 @@
+<h1>Hello <%= @user.first_name %></h1>
+
+<p>The most active user is <%= link_to User.most_active.username, user_workouts_path(User.most_active) %>: <%= User.most_active.workouts.count %> workouts.</p>
+<p>Here's the latest activity:<p>
 <ul>
   <% @workouts.each do |workout| %>
       <li><%= link_to workout.name, user_workout_path(workout.user, workout) %> by <%= link_to workout.user.username, user_workouts_path(workout.user) %></li>
       <%= workout.description %>
   <% end %>
 </ul>
+
