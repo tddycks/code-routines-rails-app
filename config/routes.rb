@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
   root to: "home#index"
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks", registrations: 'registrations' }
   resources :users, only: [:show, :edit, :update] do
     resources :workouts
   end
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :workouts, only: [:show] do 
     resources :focuses, only: [:edit, :update, :destroy]
   end
+
 
   get 'admin' => 'admin#index'
 
