@@ -5,8 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
 
-
-
   enum role: [:user, :admin]
   has_many :workouts
   has_many :focuses, through: :workouts

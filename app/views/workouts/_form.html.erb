@@ -21,8 +21,8 @@
 
   <%= f.label "Check if you'd like to keep this workout private" %>
   <%= f.check_box :private %><br />
-  <h3>Add a focus</h3>
-  <%= f.collection_select :focus_ids, @user.focuses, :id, :name %><br />
+  <h3>Add a segment to this workout:</h3>
+  <%= f.collection_check_boxes :focus_ids, Focus.all, :id, :name %><br />
 
   <%= f.fields_for :focuses, @workout.focuses.build do |focus| %>
     <%= focus.label :name %>
