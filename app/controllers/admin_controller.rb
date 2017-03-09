@@ -10,4 +10,7 @@ class AdminController < ApplicationController
     end
   end
 
+  def active
+  end
+
 end

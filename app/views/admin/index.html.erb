@@ -1,6 +1,8 @@
 <h1>Hello <%= @user.first_name %></h1>
 
-<p>The most active user is <%= link_to User.most_active.username, user_workouts_path(User.most_active) %>: <%= User.most_active.workouts.count %> workouts.</p>
+<p><%= link_to "Click for the most active user", admin_most_workouts_path %></p>
+
+
 <p>Here's the latest activity:<p>
 <ul>
   <% @workouts.reverse_each do |workout| %>

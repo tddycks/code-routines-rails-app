@@ -1,0 +1,1 @@
+<p>The most active user is <%= link_to User.most_active.username, user_workouts_path(User.most_active) %>: <%= User.most_active.workouts.count %> workouts.</p>
