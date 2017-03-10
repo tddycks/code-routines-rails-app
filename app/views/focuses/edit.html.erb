@@ -1,15 +1,6 @@
-Edit the Focus:
+Edit the Segment:
 
-<% if @focus.errors.any? %>
- <div id="error_explanation">
-   <h2>Errors:</h2>
-   <ul>
-   <% @focus.errors.full_messages.each do |msg| %>
-     <li><%= msg %></li>
-   <% end %>
-   </ul>
- </div>
-<% end %>
+<%= render partial: '/workouts/errors', locals: { record: @focus } %>
 
 <%= form_for ([@workout, @focus]) do |f| %>
   <%= f.label :name %>

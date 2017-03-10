@@ -3,13 +3,13 @@
 <h3>Workouts</h3>
 <ul>
   <% @workouts.each do |workout| %>
-    <% if workout.user == current_user %>
+    <% if policy(workout).edit? %>
       <li><%= link_to workout.name, user_workout_path(workout.user, workout) %>
       <% if workout.private %>
         (private)
       <% end %></li>
-    <% else %>
-      <li><%= link_to workout.name, user_workout_path(workout.user, workout) if !workout.private %></li>
+    <% elsif !workout.private %>
+      <li><%= link_to workout.name, user_workout_path(workout.user, workout) %></li>
     <% end %>
   <% end %>
 </ul>

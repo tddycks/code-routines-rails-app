@@ -1,13 +1,4 @@
-<% if @workout.errors.any? %>
- <div id="error_explanation">
-   <h2>Errors:</h2>
-   <ul>
-   <% @workout.errors.full_messages.each do |msg| %>
-     <li><%= msg %></li>
-   <% end %>
-   </ul>
- </div>
-<% end %>
+<%= render partial: '/workouts/errors', locals: { record: @workout } %>
 
 <%= form_for([@user, @workout]) do |f| %>
   <%= f.label :name %>
