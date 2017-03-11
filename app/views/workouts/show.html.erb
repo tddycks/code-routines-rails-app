@@ -3,7 +3,7 @@
 <p><%= @workout.description %></p>
 <p>Duration: <%= @workout.duration %></p>
 <% if current_user_workout? %>
-  <%= link_to "Edit", edit_user_workout_path(@workout.user, @workout) %>  <%= link_to "Delete Workout", user_workout_path(@workout.user, @workout), method: 'delete' %><br />
+  <%= link_to "Edit", edit_user_workout_path(@workout.user, @workout), class: 'btn btn-sm btn-info' %>  <%= link_to "Delete Workout", user_workout_path(@workout.user, @workout), method: :delete, class: 'btn btn-sm btn-danger' %><br />
 <% end %>
 
 <h3>Segments of this workout</h3>
@@ -12,7 +12,7 @@
   <p><%= focus.description %></p>
   <p>This will take about <%= focus.duration %> minutes.</p>
   <% if current_user_workout? %>
-    <%= link_to "Edit", edit_workout_focus_path(@workout, focus) %> <%= link_to "Delete Focus", workout_focus_path(@workout, focus), method: :delete %><br />
+    <%= link_to "Edit", edit_workout_focus_path(@workout, focus), class: 'btn btn-xs btn-info' %> <%= link_to "Delete Focus", workout_focus_path(@workout, focus), method: :delete, class: 'btn btn-xs btn-danger' %><br />
   <% end %>
   -------------------- <br />
 <% end %>
