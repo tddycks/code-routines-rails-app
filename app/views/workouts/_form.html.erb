@@ -1,27 +1,46 @@
 <%= render partial: '/workouts/errors', locals: { record: @workout } %>
 
 <%= form_for([@user, @workout]) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br />
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %><br />
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
 
-  <%= f.label :duration %>
-  <%= f.text_field :duration %><br />
+  <div class="form-group">
+    <%= f.label :duration %>
+    <%= f.text_field :duration, class: "form-control" %>
+  </div>
 
-  <%= f.label "Check if you'd like to keep this workout private" %>
-  <%= f.check_box :private %><br />
+  <div class="form-group">
+    <%= f.label "Check if you'd like to keep this workout private" %>
+    <%= f.check_box :private %>
+  </div>
+
   <h3>Add a segment to this workout:</h3>
-  <%= f.collection_check_boxes :focus_ids, Focus.all, :id, :name %><br />
+  <div class="form-group">
+    <%= f.collection_check_boxes :focus_ids, Focus.all, :id, :name %>
+  </div>
 
   <%= f.fields_for :focuses, @workout.focuses.build do |focus| %>
-    <%= focus.label :name %>
-    <%= focus.text_field :name %><br />
-    <%= focus.label :description %>
-    <%= focus.text_field :description %><br />
-    <%= focus.label "Number of Minutes" %>
-    <%= focus.number_field :duration %><br />
+    <div class="form-group">
+      <%= focus.label :name %>
+      <%= focus.text_field :name %>
+    </div>
+
+    <div class="form-group">
+      <%= focus.label :description %>
+      <%= focus.text_field :description %>
+    </div>
+
+    <div class="form-group">
+      <%= focus.label "Number of Minutes" %>
+      <%= focus.number_field :duration %>
+    </div>
   <% end %>
 <%= f.submit %>
 <% end %>

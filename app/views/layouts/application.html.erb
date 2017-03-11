@@ -13,11 +13,13 @@
 
   <%= render 'layouts/navigation' %>
 
-  <p class="error"><%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %></p>
-  <p class="notice"><%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %></p>
-  <p class="alert"><%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %></p>
+  <div class="container-fluid">
+
+    <p class="error"><%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %></p>
+    <p class="notice"><%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %></p>
+    <p class="alert"><%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %></p>
 
     <%= yield %>
-
+  </div>
   </body>
 </html>
