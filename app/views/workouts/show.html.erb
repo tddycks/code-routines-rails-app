@@ -1,4 +1,10 @@
 <h1><%= @workout.name %></h1>
+<%= form_for(@favorite) do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :workout_id, value: @workout.id %>
+  <%= f.submit "Add to Favorites" %>
+<% end %><br />
+
 <p>by <%= link_to @workout.user.username, user_workouts_path(@workout.user) %> </p>
 <p><%= @workout.description %></p>
 <p>Duration: <%= @workout.duration %></p>

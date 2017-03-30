@@ -1,9 +1,8 @@
-require 'pry'
-
 class Workout < ActiveRecord::Base
   belongs_to :user
   has_many :focus_workouts
   has_many :focuses, through: :focus_workouts
+  has_many :favorites
 
   validates_presence_of :name, :description, :duration
 
@@ -17,6 +16,14 @@ class Workout < ActiveRecord::Base
       end
     end
   end
+  #   focuses_hashes.each do |key, values|
+  #     if values[:name].present?
+  #       self.focuses << Focus.find_or_create_by(values) if !self.focuses.select { |f| f.name == values[:name]}
+  #     end
+  #   end
+  # end
   
 end
+
+
 

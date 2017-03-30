@@ -1,4 +1,3 @@
-require 'pry'
 class WorkoutsController < ApplicationController
   before_action :set_user, only: [:index, :new, :create, :edit, :update]
   before_action :set_workout, only: [:show, :edit, :update, :destroy]
@@ -26,6 +25,7 @@ class WorkoutsController < ApplicationController
   end
 
   def show
+    @favorite = Favorite.new
   end
 
   def edit

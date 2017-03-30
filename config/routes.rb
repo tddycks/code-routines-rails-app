@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     resources :focuses, only: [:edit, :update, :destroy]
   end
 
-
+  resources :favorites, only: [:create, :destroy]
+  
   get 'admin' => 'admin#index'
   get 'admin/most-workouts' => 'admin#active'
 

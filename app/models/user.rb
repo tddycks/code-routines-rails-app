@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   enum role: [:user, :admin]
   has_many :workouts
   has_many :focuses, through: :workouts
+  has_many :favorites
 
   after_initialize :set_user_role
 

@@ -14,6 +14,13 @@
   <% end %>
 </ul>
 
+<h3>Favorites</h3>
+<ul>
+  <% @user.favorites.each do |favorite| %>
+    <li><%= link_to favorite.workout.name, user_workout_path(favorite.workout.user, favorite.workout) %> 
+  <% end %>
+</ul>
+
 <% if current_user == @user %>
   <%= link_to "Create a new workout!", new_user_workout_path(current_user), class: 'btn btn-primary' %><br>
   <%= link_to "Edit Profile", edit_user_path(@user) %>
