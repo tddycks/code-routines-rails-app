@@ -1,10 +1,10 @@
 CodeWorkouts
 
-Hello! As a programmer I'm always interested to learn the routines that other programmers come up with to work effeciently. Do they drink coffee? Tea? Something a little harder? Are they into Nootropics? Do they take timed breaks, meditate, nap or just down a Redbull? CodeWorkouts is where you can learn the tips and tricks that other programmers have developed to work in their prime. 
+Hello! As a startup guy I'm always interested to learn the routines that other people come up with to work effeciently. Do they drink coffee? Tea? Something a little harder? Are they into Nootropics? Do they take timed breaks, meditate, nap or just down a Redbull? CodeWorkouts is where you can learn the tips and tricks that other programmers have developed to work in their prime. 
 
 About
 
-CodeWorkouts was created by Tadzio Smith, a full-stack web developer studying the Learn.Co curriculum of the Flatiron School. Feel free to contact him at tadzio.smith@gmail.com
+CodeWorkouts was created by Tadzio Smith, a product guy playing around with code. Feel free to contact him at tadzio.smith@gmail.com
 
 Usage
 
